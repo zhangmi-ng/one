@@ -1,0 +1,19 @@
+var arr = [3,5,7];
+var num = 1;
+while (true) {
+    var n = parseInt(prompt("请输入"+ num +"号玩家拿牙签的数目（1-"+arr[0]+"）",""), 10);
+    if (n<1 || n>arr[0]) {
+        alert("牙签的数目错误，请重新输入！");
+        continue;
+    }
+    arr[0] -= n;
+    if (arr[0]==0)
+        arr.shift();
+    alert("剩余牙签的数目："+arr);
+    if (arr.length>0) {
+        num = num ==1?2:1;
+    } else {
+        break;
+    }
+}
+alert(num +"号玩家输了！");
